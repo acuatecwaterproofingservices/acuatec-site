@@ -127,3 +127,6 @@ footer.site h4{color:#fff;font-size:13px;letter-spacing:1.6px;text-transform:upp
 .js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}.js .rv.in{opacity:1;transform:none}.js .rv.d1{transition-delay:.12s}.js .rv.d2{transition-delay:.24s}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}}
 [hidden]{display:none!important}
+/* About photos: show the full image */
+.collage{align-items:start}
+.collage .pic{aspect-ratio:auto;height:auto;object-fit:contain}
