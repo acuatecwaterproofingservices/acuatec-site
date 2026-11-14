@@ -11,9 +11,15 @@ const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* header, menu, back to top */
 const hd=$("header.site"),topb=$(".fab .top"),bg=$(".burger"),nv=$("nav.main");
-addEventListener("scroll",()=>{hd.classList.toggle("sc",scrollY>12);topb.classList.toggle("show",scrollY>700)},{passive:true});
+const tbar=$(".topbar");
+const place=()=>{hd.classList.toggle("sc",scrollY>12);topb.classList.toggle("show",scrollY>700);hd.style.top="calc(env(safe-area-inset-top,0px) + "+Math.max((tbar?tbar.offsetHeight:0)-scrollY,0)+"px)"};
+addEventListener("scroll",place,{passive:true});addEventListener("resize",place);place();
 topb.onclick=()=>scrollTo({top:0,behavior:RM?"auto":"smooth"});
 bg.onclick=()=>{const o=nv.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
+const closeNav=()=>{nv.classList.remove("open");bg.setAttribute("aria-expanded","false")};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeNav()});
+document.addEventListener("click",e=>{if(!e.target.closest("header.site"))closeNav()});
+addEventListener("resize",()=>{if(innerWidth>1020)closeNav()});
 nv.addEventListener("click",e=>{if(e.target.closest("a")){nv.classList.remove("open");bg.setAttribute("aria-expanded","false")}});
 $$("[data-year]").forEach(e=>e.textContent=new Date().getFullYear());
 
