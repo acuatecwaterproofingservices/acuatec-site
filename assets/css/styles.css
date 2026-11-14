@@ -132,3 +132,7 @@ footer.site h4{color:#fff;font-size:13px;letter-spacing:1.6px;text-transform:upp
 .collage .pic{aspect-ratio:auto;height:auto;object-fit:contain}
 .collage .pic:nth-child(2){margin-top:0}
 #about .two{grid-template-columns:1fr 1.2fr}
+/* Header always visible, menu always reachable */
+header.site{position:fixed;left:0;right:0;top:0;z-index:80}
+main{padding-top:76px}
+@media(max-width:1020px){nav.main{max-height:calc(100vh - 90px);overflow-y:auto}}
