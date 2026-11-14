@@ -130,3 +130,4 @@ footer.site h4{color:#fff;font-size:13px;letter-spacing:1.6px;text-transform:upp
 /* About photos: show the full image */
 .collage{align-items:start}
 .collage .pic{aspect-ratio:auto;height:auto;object-fit:contain}
+.collage .pic:nth-child(2){margin-top:0}
