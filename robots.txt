@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://USERNAME.github.io/acuatec-website/sitemap.xml
+Sitemap: https://acuatecwaterproofingservices.github.io/acuatec-site/sitemap.xml
